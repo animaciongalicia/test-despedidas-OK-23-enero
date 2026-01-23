@@ -729,11 +729,11 @@ const Report = ({ data, onRestart }) => {
           </button>
 
           <button
-            onClick={() => window.open('/recursos', '_blank')}
+            onClick={() => window.open('https://drive.google.com/drive/folders/1yxlvQNeALqPu6YUdvM90m7j3ypWQ2Mas?usp=share_link', '_blank')}
             className="btn-secondary flex items-center justify-center gap-2 text-lg"
           >
             <Wrench size={24} />
-            Necesito ayuda
+            HERRAMIENTAS
           </button>
 
           <button
