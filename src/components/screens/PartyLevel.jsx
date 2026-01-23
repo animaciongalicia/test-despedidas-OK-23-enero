@@ -7,7 +7,6 @@ const PartyLevel = ({ data, onNext }) => {
 
   const dareLevels = [
     { value: 1, label: 'Tranquilón', emoji: '😌', desc: 'Sin sustos, relax total' },
-    { value: 2, label: 'Con mesura', emoji: '😊', desc: 'Un poquito de marcha' },
     { value: 3, label: 'Medio loco', emoji: '😜', desc: 'Diversión moderada' },
     { value: 4, label: 'Bastante loco', emoji: '🤪', desc: 'A tope pero sin pasarse' },
     { value: 5, label: '¡DESFASE!', emoji: '🔥', desc: 'Sin límites, a lo bestia' }
@@ -20,7 +19,6 @@ const PartyLevel = ({ data, onNext }) => {
     { value: 'misa', label: 'En misa (literal)', emoji: '⛪' },
     { value: 'calabozo', label: 'En el calabozo', emoji: '👮' },
     { value: 'desayuno', label: 'Desayunando churros', emoji: '🥐' },
-    { value: 'sorpresa', label: 'Que nos sorprenda', emoji: '🎲' }
   ]
 
   const handleSubmit = () => {
