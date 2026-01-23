@@ -78,6 +78,7 @@ const Report = ({ data, onRestart }) => {
   const getCrazyIdeas = () => {
     const ideas = []
 
+    // ===== IDEAS POR ACTIVIDADES =====
     if (data.activities.includes('paintball')) {
       ideas.push({
         emoji: '🔫',
@@ -105,21 +106,102 @@ const Report = ({ data, onRestart }) => {
       })
     }
 
-    if (data.dareLevel >= 4) {
+    if (data.activities.includes('surf')) {
       ideas.push({
-        emoji: '🤪',
-        title: 'Prueba de VALOR extrema',
-        desc: 'Karaoke en un bar lleno cantando ROSALÍA mal a propósito',
+        emoji: '🏄',
+        title: 'Surf con resaca',
+        desc: 'El que no se caiga de la tabla... es que no bebió suficiente',
+        danger: 4
+      })
+    }
+
+    if (data.activities.includes('paracaidismo')) {
+      ideas.push({
+        emoji: '🪂',
+        title: 'Paracaidismo PRE-FIESTA',
+        desc: 'Saltar antes de la juerga. Si sobrevivís, ya nada os da miedo',
         danger: 5
       })
     }
 
-    if (data.location === 'sanxenxo') {
+    if (data.activities.includes('buggies')) {
+      ideas.push({
+        emoji: '🛞',
+        title: 'Rally del Barro',
+        desc: 'Buggie por el monte. El más sucio gana (y el más limpio paga)',
+        danger: 3
+      })
+    }
+
+    if (data.activities.includes('escape-room')) {
+      ideas.push({
+        emoji: '🔐',
+        title: 'Escape Room DRUNK',
+        desc: 'Probad a escapar después de unas cervezas. Imposible.',
+        danger: 3
+      })
+    }
+
+    if (data.activities.includes('spa')) {
+      ideas.push({
+        emoji: '💆',
+        title: 'Spa ANTES del desastre',
+        desc: 'Relajaos ahora, porque después viene la que se os viene encima',
+        danger: 1
+      })
+    }
+
+    if (data.activities.includes('catas')) {
+      ideas.push({
+        emoji: '🍷',
+        title: 'Cata sin escupir',
+        desc: 'Cata de vinos pero SIN ESCUPIR. Esto se va a complicar',
+        danger: 4
+      })
+    }
+
+    if (data.activities.includes('gastronomia')) {
+      ideas.push({
+        emoji: '🍽️',
+        title: 'Ruta gastro-ETÍLICA',
+        desc: 'Comida + vino en cada sitio. El estómago: "¿Qué me habéis hecho?"',
+        danger: 3
+      })
+    }
+
+    if (data.activities.includes('discoteca')) {
+      ideas.push({
+        emoji: '💃',
+        title: 'La última discoteca',
+        desc: 'Cerrar la disco. Literalmente. Ser los últimos en salir',
+        danger: 4
+      })
+    }
+
+    if (data.activities.includes('beach-club')) {
       ideas.push({
         emoji: '🏖️',
-        title: 'Playa de Silgar Challenge',
-        desc: 'Baño a las 3 AM gritando "¡VIVA EL NOVIO/A!"',
+        title: 'Beach Club hasta el alba',
+        desc: 'Sol + playa + fiesta = Quemadura de tercer grado garantizada',
         danger: 3
+      })
+    }
+
+    if (data.activities.includes('verbena')) {
+      ideas.push({
+        emoji: '🎺',
+        title: 'Verbena MODE ON',
+        desc: 'Muñeira, pulpo y queimada. Lo más gallego que vas a hacer en tu vida',
+        danger: 2
+      })
+    }
+
+    if (data.activities.includes('afterhours')) {
+      ideas.push({
+        emoji: '🌅',
+        title: 'After hasta el desayuno',
+        desc: 'Cuando sale el sol y seguís ahí... ya sabéis que lo hicisteis bien',
+        danger: 5
       })
     }
 
@@ -132,29 +214,255 @@ const Report = ({ data, onRestart }) => {
       })
     }
 
-    // Ideas genéricas locas
-    ideas.push({
-      emoji: '🎤',
-      title: 'Karaoke DE VERDAD',
-      desc: 'Cantad la canción más vergonzosa en el sitio más lleno posible',
-      danger: 4
-    })
+    // ===== IDEAS POR UBICACIÓN =====
+    if (data.location === 'sanxenxo') {
+      ideas.push({
+        emoji: '🏖️',
+        title: 'Playa de Silgar Challenge',
+        desc: 'Baño a las 3 AM gritando "¡VIVA EL NOVIO/A!"',
+        danger: 3
+      })
+      ideas.push({
+        emoji: '🎪',
+        title: 'Invasión de Sanxenxo',
+        desc: 'Recorrer TODOS los beach clubs en una noche. Misión imposible',
+        danger: 5
+      })
+    }
 
-    ideas.push({
-      emoji: '📸',
-      title: 'Fotógrafo espontáneo',
-      desc: 'Pedid a gente random que os haga fotos. Las mejores a WhatsApp del grupo',
-      danger: 2
-    })
+    if (data.location === 'vigo') {
+      ideas.push({
+        emoji: '🎭',
+        title: 'Casco Vello MODE',
+        desc: 'Ruta por el Casco Vello hasta que cierren o os echen',
+        danger: 4
+      })
+      ideas.push({
+        emoji: '🦪',
+        title: 'Ostras + Vino CHALLENGE',
+        desc: 'Ostras en el Berbés + vino blanco. Competición de quién aguanta más',
+        danger: 3
+      })
+    }
 
-    ideas.push({
-      emoji: '🍺',
-      title: 'Ruta de los Mil Bares',
-      desc: 'Un chupito en cada bar. Objetivo: Sobrevivir.',
-      danger: 5
-    })
+    if (data.location === 'a-coruna') {
+      ideas.push({
+        emoji: '🌊',
+        title: 'Orzán de noche',
+        desc: 'Baño nocturno en Orzán. Frío gallego + alcohol = Adrenalina pura',
+        danger: 4
+      })
+      ideas.push({
+        emoji: '🎪',
+        title: 'Ruta de Orzán a Riazor',
+        desc: 'Todos los bares entre playas. Si llegáis al final, sois héroes',
+        danger: 5
+      })
+    }
 
-    return ideas.slice(0, 6) // Máximo 6 ideas
+    if (data.location === 'oporto') {
+      ideas.push({
+        emoji: '🍷',
+        title: 'Francesinha Challenge',
+        desc: 'Comer francesinha + vino de Oporto. Tu hígado lo recordará',
+        danger: 4
+      })
+      ideas.push({
+        emoji: '🚂',
+        title: 'Ribeira hasta el amanecer',
+        desc: 'La Ribeira de noche es otro nivel. Preparad el estómago',
+        danger: 5
+      })
+    }
+
+    if (data.location === 'santiago') {
+      ideas.push({
+        emoji: '🎓',
+        title: 'Zona Vieja MODE',
+        desc: 'Ruta universitaria por la zona vieja. Juventud + alcohol = CAOS',
+        danger: 4
+      })
+    }
+
+    if (data.location === 'pontevedra') {
+      ideas.push({
+        emoji: '🍻',
+        title: 'Ruta de los Vinos',
+        desc: 'Zona vieja de Pontevedra + vinos albariño. Elegancia y desfase',
+        danger: 3
+      })
+    }
+
+    // ===== IDEAS POR NIVEL DE LOCURA =====
+    if (data.dareLevel >= 4) {
+      ideas.push({
+        emoji: '🤪',
+        title: 'Prueba de VALOR extrema',
+        desc: 'Karaoke en un bar lleno cantando ROSALÍA mal a propósito',
+        danger: 5
+      })
+      ideas.push({
+        emoji: '🎤',
+        title: 'Pedir temas IMPOSIBLES',
+        desc: 'En cada bar, pedid la canción más rara. DJ: "¿En serio?"',
+        danger: 4
+      })
+    }
+
+    if (data.dareLevel <= 2) {
+      ideas.push({
+        emoji: '😌',
+        title: 'Plan tranqui-responsable',
+        desc: 'Cena, copas con moderación, a casa a las 2. Sois unos sosos.',
+        danger: 1
+      })
+    }
+
+    // ===== IDEAS POR TIPO DE FIESTA =====
+    if (data.partyType === 'desfase-total') {
+      ideas.push({
+        emoji: '🔥',
+        title: 'Sin límites, literal',
+        desc: 'Todo vale. ABSOLUTAMENTE todo. (Bueno, casi todo)',
+        danger: 5
+      })
+    }
+
+    if (data.partyType === 'aventura') {
+      ideas.push({
+        emoji: '🚁',
+        title: 'Actividad SORPRESA extrema',
+        desc: 'Reservad algo random tipo tirolina, puenting... YOLO',
+        danger: 4
+      })
+    }
+
+    if (data.partyType === 'relax-spa') {
+      ideas.push({
+        emoji: '🧘',
+        title: 'Spa + Vino = Relax FAKE',
+        desc: 'Empezáis en el spa y acabáis en el bar. Siempre pasa.',
+        danger: 2
+      })
+    }
+
+    // ===== IDEAS POR PRESUPUESTO =====
+    if (data.budget === 'luxury') {
+      ideas.push({
+        emoji: '🤑',
+        title: 'TODO incluido SIN límites',
+        desc: 'Barra libre, reservados VIP, botella de champagne. A lo grande',
+        danger: 5
+      })
+    }
+
+    if (data.budget === 'low') {
+      ideas.push({
+        emoji: '💰',
+        title: 'Low cost pero ÉPICO',
+        desc: 'Chupitos de 1€, playa gratis, dormir donde pille. Estilo backpacker',
+        danger: 3
+      })
+    }
+
+    // ===== IDEAS POR GRUPO =====
+    if (data.groupSize === '20+') {
+      ideas.push({
+        emoji: '🚌',
+        title: 'Autocar del DESFASE',
+        desc: 'Alquilad un bus para moveros. Party bus = Fiesta móvil',
+        danger: 4
+      })
+    }
+
+    if (data.crazyFriend === 'varios') {
+      ideas.push({
+        emoji: '😈',
+        title: 'Desafío de los LOCOS',
+        desc: 'Los desfasados compiten entre ellos. Nivel: Jackass',
+        danger: 5
+      })
+    }
+
+    // ===== IDEAS POR FINAL =====
+    if (data.ending === 'calabozo') {
+      ideas.push({
+        emoji: '👮',
+        title: 'Preparad la fianza',
+        desc: 'Si vais a acabar ahí, al menos que sea con estilo',
+        danger: 5
+      })
+    }
+
+    if (data.ending === 'playa') {
+      ideas.push({
+        emoji: '🌅',
+        title: 'Amanecer playero ÉPICO',
+        desc: 'Ver salir el sol desde la playa. Romántico y desfasado a la vez',
+        danger: 3
+      })
+    }
+
+    if (data.ending === 'misa') {
+      ideas.push({
+        emoji: '⛪',
+        title: 'De la disco a la iglesia',
+        desc: 'Misa de resaca. Galicia tiene estas contradicciones',
+        danger: 2
+      })
+    }
+
+    // ===== IDEAS GENÉRICAS (solo si faltan) =====
+    const genericIdeas = [
+      {
+        emoji: '🎤',
+        title: 'Karaoke DE VERDAD',
+        desc: 'Cantad la canción más vergonzosa en el sitio más lleno posible',
+        danger: 4
+      },
+      {
+        emoji: '📸',
+        title: 'Fotógrafo espontáneo',
+        desc: 'Pedid a gente random que os haga fotos. Las mejores a WhatsApp del grupo',
+        danger: 2
+      },
+      {
+        emoji: '🍺',
+        title: 'Ruta de los Mil Bares',
+        desc: 'Un chupito en cada bar. Objetivo: Sobrevivir.',
+        danger: 5
+      },
+      {
+        emoji: '🎲',
+        title: 'Ruleta de la MUERTE',
+        desc: 'Cada bar, tirada de dado. El número = chupitos que toca',
+        danger: 4
+      },
+      {
+        emoji: '🎭',
+        title: 'Disfraz OBLIGATORIO',
+        desc: 'Todo el grupo disfrazado de lo mismo. Vergüenza al máximo',
+        danger: 3
+      },
+      {
+        emoji: '📱',
+        title: 'Prohibido el móvil',
+        desc: 'Nada de móviles. Vivid el momento (o perded al grupo)',
+        danger: 2
+      }
+    ]
+
+    // Añadir genéricas solo si faltan ideas
+    if (ideas.length < 6) {
+      genericIdeas.forEach(idea => {
+        if (ideas.length < 8) {
+          ideas.push(idea)
+        }
+      })
+    }
+
+    // Mezclar aleatoriamente y devolver máximo 8
+    return ideas.sort(() => Math.random() - 0.5).slice(0, 8)
   }
 
   // Alertas y warnings según las elecciones
