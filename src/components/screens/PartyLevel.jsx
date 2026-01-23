@@ -7,6 +7,7 @@ const PartyLevel = ({ data, onNext }) => {
 
   const dareLevels = [
     { value: 1, label: 'Tranquilón', emoji: '😌', desc: 'Sin sustos, relax total' },
+    { value: 2, label: 'Con mesura', emoji: '😊', desc: 'Un poquito de marcha' },
     { value: 3, label: 'Medio loco', emoji: '😜', desc: 'Diversión moderada' },
     { value: 4, label: 'Bastante loco', emoji: '🤪', desc: 'A tope pero sin pasarse' },
     { value: 5, label: '¡DESFASE!', emoji: '🔥', desc: 'Sin límites, a lo bestia' }
@@ -42,7 +43,7 @@ const PartyLevel = ({ data, onNext }) => {
       {/* Nivel de atrevimiento */}
       <div className="mb-10">
         <label className="block text-lg font-bold text-gray-800 mb-6 text-center">
-          Nivel de atrevimiento: <span className="text-party-pink text-2xl">{dareLevels[dareLevel - 1].emoji}</span>
+          Nivel de atrevimiento: <span className="text-party-pink text-2xl">{dareLevels.find(l => l.value === dareLevel)?.emoji || '😜'}</span>
         </label>
 
         <div className="space-y-4">
