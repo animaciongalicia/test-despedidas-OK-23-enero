@@ -14,16 +14,6 @@ const PainPoints = ({ onNext }) => {
       description: 'Cada uno quiere una cosa diferente'
     },
     {
-      icon: DollarSign,
-      title: 'Presupuestos que no cuadran',
-      description: 'Siempre hay alguien que dice "está muy caro"'
-    },
-    {
-      icon: MessageCircle,
-      title: 'Ideas repetidas y aburridas',
-      description: 'La típica "cena + discoteca" de siempre'
-    },
-    {
       icon: AlertTriangle,
       title: 'Miedo a que salga mal',
       description: 'Y la responsabilidad caiga sobre ti'
