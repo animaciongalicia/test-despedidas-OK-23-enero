@@ -17,13 +17,13 @@ const Welcome = ({ onNext }) => {
       </h1>
 
       <p className="text-2xl text-gray-700 mb-8 font-bold">
-        La despedida perfecta te espera 🚀
+        ¿La que tipo de despedida os espera? 🚀
       </p>
 
       <div className="flex items-center justify-center gap-3 mb-8">
         <Sparkles className="text-party-yellow" size={24} />
         <p className="text-lg text-gray-600">
-          En 2 minutos tendrás tu plan perfecto
+          En 2 minutos tendrás el diagnóstico
         </p>
         <Sparkles className="text-party-yellow" size={24} />
       </div>
