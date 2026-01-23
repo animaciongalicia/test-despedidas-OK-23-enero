@@ -17,7 +17,7 @@ const Welcome = ({ onNext }) => {
       </h1>
 
       <p className="text-2xl text-gray-700 mb-4 font-black">
-        La despedida más LOCA de Galicia
+        La despedida más DIVERTIDA de Galicia
       </p>
 
       <p className="text-lg text-gray-600 mb-8">
@@ -26,7 +26,7 @@ const Welcome = ({ onNext }) => {
 
       <div className="bg-gradient-to-r from-party-pink/20 to-party-orange/20 p-4 rounded-2xl mb-8 border-2 border-party-pink/30">
         <p className="text-lg font-bold text-gray-800">
-          ⚡ En 2 minutos te montamos un PLAN DE LOCOS ⚡
+          ⚡ En 3 minutos te montamos un PLAN DE LOCOS ⚡
         </p>
         <p className="text-sm text-gray-600 mt-2">
           (Que después dirán: "¿Cómo se nos ocurrió?")
