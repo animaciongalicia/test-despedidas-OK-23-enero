@@ -10,7 +10,6 @@ const Activities = ({ data, onNext }) => {
     { value: 'karting', label: 'Karting', emoji: '🏎️' },
     { value: 'barco', label: 'Barco/Catamarán', emoji: '⛵' },
     { value: 'surf', label: 'Surf/Paddle', emoji: '🏄' },
-    { value: 'paracaidismo', label: 'Paracaidismo', emoji: '🪂' },
     { value: 'buggies', label: 'Buggies/Quads', emoji: '🛞' },
     { value: 'escape-room', label: 'Escape Room', emoji: '🔐' },
     { value: 'spa', label: 'Spa/Balneario', emoji: '💆' },
