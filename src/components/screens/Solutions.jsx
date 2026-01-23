@@ -6,22 +6,22 @@ const Solutions = ({ onNext }) => {
     {
       icon: Zap,
       title: 'Plan en 2 minutos',
-      description: 'Responde y listo. CHAO grupos infinitos de WhatsApp'
+      description: 'CHAO grupos infinitos de WhatsApp'
     },
     {
       icon: Target,
       title: 'Ideas DE LOCOS',
-      description: 'Cosas que jamás se te habrían ocurrido (para bien o para mal)'
+      description: 'Que jamás se te ocurririan (para bien o para mal)'
     },
     {
       icon: Sparkles,
       title: 'Personalizado al 100%',
-      description: 'Según vuestro nivel de locura y cuánto queréis gastar'
+      description: 'Según nivel de locura y cuánto queréis gastar'
     },
     {
       icon: TrendingUp,
       title: 'Expertos en Galicia',
-      description: 'Conocemos TODOS los sitios de marcha (y los que no deberías ir)'
+      description: 'Donde deberiais ir de marcha (y a donde no ir)'
     },
     {
       icon: Shield,
@@ -31,7 +31,7 @@ const Solutions = ({ onNext }) => {
     {
       icon: Heart,
       title: 'Recuerdos ÉPICOS',
-      description: 'De los que contaréis hasta a vuestros nietos'
+      description: 'Se los contaréis hasta a vuestros nietos'
     }
   ]
 
