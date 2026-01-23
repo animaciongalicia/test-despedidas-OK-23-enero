@@ -6,7 +6,7 @@ const Solutions = ({ onNext }) => {
     {
       icon: Zap,
       title: 'Plan en 2 minutos',
-      description: 'Responde unas preguntas y listo. Adiós grupos de WhatsApp infinitos'
+      description: 'Unas preguntas y adiós a WhatsApp infinitos'
     },
     {
       icon: Target,
@@ -16,22 +16,22 @@ const Solutions = ({ onNext }) => {
     {
       icon: Sparkles,
       title: 'Ideas originales',
-      description: 'Actividades que no se te habían ocurrido. Nada de lo típico'
+      description: 'Actividades divertidas y para todos los gustos.'
     },
     {
       icon: TrendingUp,
       title: 'Optimizado para Galicia',
-      description: 'Conocemos los mejores sitios de Coruña, Vigo, Sanxenxo, Oporto...'
+      description: 'Los mejores sitios: Coruña, Vigo, Sanxenxo, Oporto...'
     },
     {
       icon: Shield,
       title: 'Sin riesgo',
-      description: 'Te ayudamos a que todo salga perfecto. Si la lías, no es culpa tuya'
+      description: 'Te ayudamoremos a que todo salga perfecto.'
     },
     {
       icon: Heart,
       title: 'Despedida memorable',
-      description: 'El novio/a y la pandilla fliparán. Recuerdos para siempre'
+      description: 'Recuerdos y risas de todos para siempre'
     }
   ]
 
@@ -75,7 +75,7 @@ const Solutions = ({ onNext }) => {
       <div className="bg-gradient-to-r from-party-pink/10 to-party-purple/10 p-6 rounded-2xl mb-6 border-2 border-party-pink/30">
         <p className="text-center text-lg font-bold text-gray-800">
           🎁 <span className="text-party-pink">GRATIS</span> y sin compromiso •
-          Recibe tu plan personalizado en <span className="text-party-purple">30 segundos</span>
+          Recibe tu plan con mucha <span className="text-party-purple">retranca</span>
         </p>
       </div>
 
