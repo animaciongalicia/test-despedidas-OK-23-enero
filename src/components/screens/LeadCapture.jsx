@@ -78,7 +78,7 @@ const LeadCapture = ({ data, onNext }) => {
             maxLength={15}
           />
           <p className="text-sm text-gray-500 mt-2">
-            📲 Te enviaremos el informe por WhatsApp en 30 segundos
+            📲 Te enviaremos el informe por WhatsApp.
           </p>
         </div>
       </div>
@@ -95,7 +95,7 @@ const LeadCapture = ({ data, onNext }) => {
 
       <div className="bg-gradient-to-r from-party-blue/10 to-party-purple/10 p-4 rounded-xl mb-6">
         <p className="text-center text-sm text-gray-700">
-          🎁 <strong>BONUS:</strong> Recibirás ideas exclusivas y descuentos especiales
+          🎁 <strong>BONUS:</strong> Recibirás ideas exclusivas y mucha retranca
         </p>
       </div>
 
