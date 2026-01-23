@@ -6,32 +6,32 @@ const Solutions = ({ onNext }) => {
     {
       icon: Zap,
       title: 'Plan en 2 minutos',
-      description: 'Responde unas preguntas y listo. Adiós grupos de WhatsApp infinitos'
+      description: 'Responde y listo. CHAO grupos infinitos de WhatsApp'
     },
     {
       icon: Target,
-      title: 'Personalizado 100%',
-      description: 'A medida de tu grupo, gustos y presupuesto'
+      title: 'Ideas DE LOCOS',
+      description: 'Cosas que jamás se te habrían ocurrido (para bien o para mal)'
     },
     {
       icon: Sparkles,
-      title: 'Ideas originales',
-      description: 'Actividades que no se te habían ocurrido. Nada de lo típico'
+      title: 'Personalizado al 100%',
+      description: 'Según vuestro nivel de locura y cuánto queréis gastar'
     },
     {
       icon: TrendingUp,
-      title: 'Optimizado para Galicia',
-      description: 'Conocemos los mejores sitios de Coruña, Vigo, Sanxenxo, Oporto...'
+      title: 'Expertos en Galicia',
+      description: 'Conocemos TODOS los sitios de marcha (y los que no deberías ir)'
     },
     {
       icon: Shield,
-      title: 'Sin riesgo',
-      description: 'Te ayudamos a que todo salga perfecto. Si la lías, no es culpa tuya'
+      title: 'Tú tranquilo/a',
+      description: 'Si sale mal, es culpa de la IA, no tuya 🤷'
     },
     {
       icon: Heart,
-      title: 'Despedida memorable',
-      description: 'El novio/a y la pandilla fliparán. Recuerdos para siempre'
+      title: 'Recuerdos ÉPICOS',
+      description: 'De los que contaréis hasta a vuestros nietos'
     }
   ]
 
@@ -40,10 +40,13 @@ const Solutions = ({ onNext }) => {
       <div className="text-center mb-8">
         <div className="text-6xl mb-4">🎯</div>
         <h2 className="text-4xl font-black mb-3 bg-gradient-to-r from-party-blue to-party-purple bg-clip-text text-transparent">
-          Nosotros te lo ponemos fácil
+          ¡Nosotros te lo RESOLVEMOS!
         </h2>
-        <p className="text-xl text-gray-600">
-          Nuestra herramienta hace el trabajo sucio por ti
+        <p className="text-xl text-gray-600 mb-2">
+          (Que para eso estamos, joder)
+        </p>
+        <p className="text-lg text-gray-500">
+          Nuestra IA hace el trabajo SUCIO por ti
         </p>
       </div>
 
@@ -74,8 +77,11 @@ const Solutions = ({ onNext }) => {
 
       <div className="bg-gradient-to-r from-party-pink/10 to-party-purple/10 p-6 rounded-2xl mb-6 border-2 border-party-pink/30">
         <p className="text-center text-lg font-bold text-gray-800">
-          🎁 <span className="text-party-pink">GRATIS</span> y sin compromiso •
-          Recibe tu plan personalizado en <span className="text-party-purple">30 segundos</span>
+          🎁 <span className="text-party-pink">100% GRATIS</span> y sin compromiso •
+          Tu plan de locos en <span className="text-party-purple">30 segundos</span>
+        </p>
+        <p className="text-center text-sm text-gray-600 mt-2">
+          (Sí, has leído bien: GRATIS DE VERDAD)
         </p>
       </div>
 
@@ -85,7 +91,7 @@ const Solutions = ({ onNext }) => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        ¡Empezamos! Cuéntanos de tu grupo 🚀
+        ¡DALE, VAMOS A LIARLA! 🚀🔥
       </motion.button>
     </div>
   )

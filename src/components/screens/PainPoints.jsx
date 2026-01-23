@@ -5,33 +5,33 @@ const PainPoints = ({ onNext }) => {
   const painPoints = [
     {
       icon: Clock,
-      title: 'Horas perdidas organizando',
-      description: 'Grupos de WhatsApp eternos sin llegar a nada'
+      title: 'Grupos de WhatsApp ETERNOS',
+      description: '200 mensajes sin leer y seguís SIN DECIDIR NADA'
     },
     {
       icon: Users,
       title: 'Nadie se pone de acuerdo',
-      description: 'Cada uno quiere una cosa diferente'
+      description: 'Uno quiere paintball, otro spa, el otro está en Narnia'
     },
     {
       icon: DollarSign,
-      title: 'Presupuestos que no cuadran',
-      description: 'Siempre hay alguien que dice "está muy caro"'
+      title: '"Tío, está MUY caro"',
+      description: 'El pesado de siempre que nunca tiene pasta'
     },
     {
       icon: MessageCircle,
-      title: 'Ideas repetidas y aburridas',
-      description: 'La típica "cena + discoteca" de siempre'
+      title: 'Ideas ABURRIDÍSIMAS',
+      description: 'Cena + discoteca = tu abuela lo haría mejor'
     },
     {
       icon: AlertTriangle,
-      title: 'Miedo a que salga mal',
-      description: 'Y la responsabilidad caiga sobre ti'
+      title: 'Cagado de miedo',
+      description: 'Si sale mal, la culpa es TUYA (obvio)'
     },
     {
       icon: Frown,
-      title: 'El novio/a acaba decepcionado',
-      description: 'Porque no era lo que esperaba'
+      title: 'El novio/a decepcionado/a',
+      description: 'Y encima te lo recordarán el resto de tu vida'
     }
   ]
 
@@ -40,10 +40,13 @@ const PainPoints = ({ onNext }) => {
       <div className="text-center mb-8">
         <div className="text-6xl mb-4">😫</div>
         <h2 className="text-4xl font-black mb-3 text-party-purple">
-          ¿Te suena este marrón?
+          El PEDAZO DE MARRÓN que tienes
         </h2>
-        <p className="text-xl text-gray-600">
-          Organizar una despedida es un verdadero dolor de cabeza...
+        <p className="text-xl text-gray-600 mb-2">
+          (Que te quieres tirar por un puente)
+        </p>
+        <p className="text-lg text-gray-500 font-bold">
+          👇 Seguro que te suenan TODAS 👇
         </p>
       </div>
 
@@ -78,7 +81,7 @@ const PainPoints = ({ onNext }) => {
         whileHover={{ scale: 1.02 }}
         whileTap={{ scale: 0.98 }}
       >
-        ¡Quiero la solución ya! 💡
+        ¡SÁCAME DE ESTA YA! 🆘💡
       </motion.button>
     </div>
   )

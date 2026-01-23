@@ -7,11 +7,11 @@ const GroupSize = ({ data, onNext }) => {
   const [protagonist, setProtagonist] = useState(data.protagonist || '')
 
   const sizeOptions = [
-    { value: '2-5', label: 'Grupo íntimo', emoji: '👥', desc: '2-5 personas' },
-    { value: '6-10', label: 'Pandilla normal', emoji: '👨‍👩‍👧‍👦', desc: '6-10 personas' },
-    { value: '11-15', label: 'Grupo grande', emoji: '🎉', desc: '11-15 personas' },
-    { value: '16-20', label: 'La tropa entera', emoji: '🎊', desc: '16-20 personas' },
-    { value: '20+', label: '¡El ejército!', emoji: '🚀', desc: 'Más de 20' }
+    { value: '2-5', label: 'Los 4 gatos', emoji: '👥', desc: '2-5 personas' },
+    { value: '6-10', label: 'La pandilla', emoji: '👨‍👩‍👧‍👦', desc: '6-10 personas' },
+    { value: '11-15', label: 'El grupo completo', emoji: '🎉', desc: '11-15 personas' },
+    { value: '16-20', label: 'La TROPA entera', emoji: '🎊', desc: '16-20 personas' },
+    { value: '20+', label: '¡TODO EL PUEBLO!', emoji: '🚀', desc: 'Más de 20 (locura)' }
   ]
 
   const protagonistOptions = [
@@ -31,10 +31,10 @@ const GroupSize = ({ data, onNext }) => {
       <div className="text-center mb-8">
         <div className="text-6xl mb-4">👥</div>
         <h2 className="text-4xl font-black mb-3 text-party-purple">
-          Háblanos de la pandilla
+          ¿Cuántos LOCOS sois?
         </h2>
         <p className="text-xl text-gray-600">
-          Cuantos más locos, mejor 🎉
+          (Cuantos más, mejor se lia la cosa 🔥)
         </p>
       </div>
 

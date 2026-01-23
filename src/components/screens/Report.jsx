@@ -1,20 +1,23 @@
 import { motion } from 'framer-motion'
-import { Share2, Wrench, AlertCircle, TrendingUp, Target, Zap, PartyPopper } from 'lucide-react'
+import { Share2, Wrench, AlertCircle, Zap, Flame, Skull, Beer, PartyPopper } from 'lucide-react'
 
 const Report = ({ data, onRestart }) => {
   const shareWhatsApp = () => {
     const message = encodeURIComponent(
-      `🎉 ¡Mira el plan que he creado para nuestra despedida!\n\n` +
-      `Haz el tuyo aquí: ${window.location.origin}`
+      `🔥 Acabo de hacer el test de despedidas más LOCO de Galicia 🔥\n\n` +
+      `Las ideas que me ha dado son DE LOCOS... 😂\n\n` +
+      `Haz el tuyo: ${window.location.origin}\n\n` +
+      `(Te vas a reír un montón)`
     )
     window.open(`https://wa.me/?text=${message}`, '_blank')
   }
 
   const contactAgency = () => {
     const message = encodeURIComponent(
-      `¡Hola! He completado el test de despedidas y necesito ayuda para organizarla.\n\n` +
+      `¡SOCORRO! 🆘 Necesito ayuda para organizar esta locura de despedida\n\n` +
       `Mi nombre: ${data.name}\n` +
-      `WhatsApp: ${data.whatsapp}`
+      `WhatsApp: ${data.whatsapp}\n\n` +
+      `Las ideas que me disteis son DEMASIADO... ayudadme pls 😅`
     )
     window.open(`https://wa.me/34612345678?text=${message}`, '_blank')
   }
@@ -27,29 +30,182 @@ const Report = ({ data, onRestart }) => {
       'oporto': 'Oporto',
       'santiago': 'Santiago',
       'pontevedra': 'Pontevedra',
-      'otros': 'otra ubicación'
+      'otros': 'algún sitio raro'
     }
     return locations[location] || location
   }
 
+  // Generar análisis con retranca según los datos
+  const getCrazyAnalysis = () => {
+    const analyses = []
+
+    if (data.groupSize === '20+') {
+      analyses.push('👥 Con ese ejército vais a conquistar ' + getLocationName(data.location) + ' entero')
+    } else if (data.groupSize === '2-5') {
+      analyses.push('👥 Grupo pequeño = más fácil de controlar (en teoría)')
+    }
+
+    if (data.dareLevel >= 4) {
+      analyses.push('🔥 Nivel de locura ' + data.dareLevel + '/5... Alguien acabará en el calabozo, seguro')
+    } else if (data.dareLevel <= 2) {
+      analyses.push('😌 Nivel de locura ' + data.dareLevel + '/5... Esto es una merienda, no una despedida')
+    }
+
+    if (data.location === 'sanxenxo') {
+      analyses.push('🏖️ Sanxenxo en verano = CAOS TOTAL (te va a encantar)')
+    } else if (data.location === 'oporto') {
+      analyses.push('🍷 Oporto = Preparad el hígado. Las francesinhas no perdonan')
+    } else if (data.location === 'vigo') {
+      analyses.push('🎪 Vigo = Zona Casco Vello hasta que cierre (o hasta que os echen)')
+    }
+
+    if (data.crazyFriend === 'varios') {
+      analyses.push('🤪 Varios desfasados en el grupo... Esto se va a descontrolar (y nos encanta)')
+    }
+
+    if (data.ending === 'calabozo') {
+      analyses.push('👮 Final en el calabozo = ÉPICO (aunque tu madre no opine lo mismo)')
+    } else if (data.ending === 'playa') {
+      analyses.push('🏖️ Baño en la playa a las 7 AM = Fotaza para Instagram o muerte por hipotermia')
+    } else if (data.ending === 'misa') {
+      analyses.push('⛪ Acabar en misa... Respeto. Galicia es así de contradictoria')
+    }
+
+    return analyses
+  }
+
+  // Generar ideas LOCAS personalizadas
+  const getCrazyIdeas = () => {
+    const ideas = []
+
+    if (data.activities.includes('paintball')) {
+      ideas.push({
+        emoji: '🔫',
+        title: 'Paintball con CONSECUENCIAS',
+        desc: 'El que pierda paga todas las rondas de la noche. Fácil.',
+        danger: 3
+      })
+    }
+
+    if (data.activities.includes('karting')) {
+      ideas.push({
+        emoji: '🏎️',
+        title: 'Gran Premio del Despiporre',
+        desc: 'Último puesto = Va disfrazado de pollo toda la noche',
+        danger: 2
+      })
+    }
+
+    if (data.activities.includes('barco')) {
+      ideas.push({
+        emoji: '⛵',
+        title: 'Crucero del Desfase',
+        desc: 'Barco + sol + alcohol = Alguien acabará en el agua',
+        danger: 4
+      })
+    }
+
+    if (data.dareLevel >= 4) {
+      ideas.push({
+        emoji: '🤪',
+        title: 'Prueba de VALOR extrema',
+        desc: 'Karaoke en un bar lleno cantando ROSALÍA mal a propósito',
+        danger: 5
+      })
+    }
+
+    if (data.location === 'sanxenxo') {
+      ideas.push({
+        emoji: '🏖️',
+        title: 'Playa de Silgar Challenge',
+        desc: 'Baño a las 3 AM gritando "¡VIVA EL NOVIO/A!"',
+        danger: 3
+      })
+    }
+
+    if (data.activities.includes('humor-amarillo')) {
+      ideas.push({
+        emoji: '🤡',
+        title: 'Humor Amarillo CASERO',
+        desc: 'Montáis vuestras propias pruebas con hinchables y aceite',
+        danger: 5
+      })
+    }
+
+    // Ideas genéricas locas
+    ideas.push({
+      emoji: '🎤',
+      title: 'Karaoke DE VERDAD',
+      desc: 'Cantad la canción más vergonzosa en el sitio más lleno posible',
+      danger: 4
+    })
+
+    ideas.push({
+      emoji: '📸',
+      title: 'Fotógrafo espontáneo',
+      desc: 'Pedid a gente random que os haga fotos. Las mejores a WhatsApp del grupo',
+      danger: 2
+    })
+
+    ideas.push({
+      emoji: '🍺',
+      title: 'Ruta de los Mil Bares',
+      desc: 'Un chupito en cada bar. Objetivo: Sobrevivir.',
+      danger: 5
+    })
+
+    return ideas.slice(0, 6) // Máximo 6 ideas
+  }
+
+  // Alertas y warnings según las elecciones
+  const getWarnings = () => {
+    const warnings = []
+
+    if (data.dareLevel >= 4 && data.groupSize === '20+') {
+      warnings.push('⚠️ ALERTA MÁXIMA: Grupo grande + nivel de locura alto = LLAMAD A LA POLICÍA ANTES')
+    }
+
+    if (!data.accommodation && data.dareLevel >= 3) {
+      warnings.push('⚠️ Sin alojamiento y con ese nivel de fiesta... ¿Seguro? ¿Muy seguro?')
+    }
+
+    if (data.budget === 'low' && data.activities.length > 5) {
+      warnings.push('⚠️ Presupuesto ajustado + mil actividades = MATEMÁTICAS QUE NO CUADRAN')
+    }
+
+    if (data.location === 'oporto' && data.ending === 'misa') {
+      warnings.push('⚠️ Ir a Oporto y acabar en misa... Respetable pero contradictorio 😂')
+    }
+
+    return warnings
+  }
+
+  const crazyAnalysis = getCrazyAnalysis()
+  const crazyIdeas = getCrazyIdeas()
+  const warnings = getWarnings()
+
   return (
     <div className="space-y-6 max-h-[85vh] overflow-y-auto pb-8">
-      {/* Header */}
+      {/* Header LOCO */}
       <motion.div
-        initial={{ opacity: 0, y: -20 }}
-        animate={{ opacity: 1, y: 0 }}
-        className="card-party text-center"
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ type: 'spring', duration: 0.6 }}
+        className="card-party text-center bg-gradient-to-br from-party-pink/20 to-party-purple/20"
       >
-        <div className="text-6xl mb-4">🎊</div>
-        <h1 className="text-5xl font-black mb-3 bg-gradient-to-r from-party-pink via-party-purple to-party-blue bg-clip-text text-transparent">
-          ¡Tu Informe está listo!
+        <div className="text-8xl mb-4 animate-bounce-slow">🎊</div>
+        <h1 className="text-5xl font-black mb-3 bg-gradient-to-r from-party-pink via-party-orange to-party-purple bg-clip-text text-transparent">
+          ¡TU PLAN DE LOCOS!
         </h1>
-        <p className="text-xl text-gray-600">
-          Aquí está tu despedida perfecta, {data.name} 🚀
+        <p className="text-2xl text-gray-700 font-black mb-2">
+          {data.name}, esto va a ser ÉPICO
+        </p>
+        <p className="text-lg text-gray-600">
+          (O un desastre total, pero épico de todas formas)
         </p>
       </motion.div>
 
-      {/* Resumen */}
+      {/* El ANÁLISIS con RETRANCA */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,63 +213,72 @@ const Report = ({ data, onRestart }) => {
         className="card-party"
       >
         <div className="flex items-center gap-3 mb-4">
-          <PartyPopper className="text-party-pink" size={28} />
-          <h2 className="text-2xl font-black text-gray-800">Resumen de tu despedida</h2>
+          <Zap className="text-party-yellow animate-pulse" size={32} />
+          <h2 className="text-3xl font-black text-gray-800">Análisis DE LOCOS</h2>
         </div>
-        <div className="bg-gradient-to-br from-party-blue/10 to-party-purple/10 p-6 rounded-2xl space-y-3">
-          <p className="text-lg">
-            <strong className="text-party-purple">👥 Grupo:</strong> {data.groupSize} personas • {data.protagonist === 'novio' ? 'Novio' : data.protagonist === 'novia' ? 'Novia' : 'Protagonista'}
+
+        <div className="bg-gradient-to-br from-party-blue/10 to-party-purple/10 p-6 rounded-2xl mb-4 border-2 border-party-pink/30">
+          <p className="text-xl font-bold text-gray-800 mb-4">
+            📊 Vuestro plan en números:
           </p>
-          <p className="text-lg">
-            <strong className="text-party-purple">📍 Destino:</strong> {getLocationName(data.location)}
-          </p>
-          <p className="text-lg">
-            <strong className="text-party-purple">🎯 Estilo:</strong> {data.partyType}
-          </p>
-          <p className="text-lg">
-            <strong className="text-party-purple">🔥 Nivel de locura:</strong> {data.dareLevel}/5
-          </p>
-          <p className="text-lg">
-            <strong className="text-party-purple">🎊 Actividades:</strong> {data.activities.length} seleccionadas
-          </p>
+          <div className="grid grid-cols-2 gap-4 text-center">
+            <div className="bg-white p-4 rounded-xl">
+              <div className="text-3xl font-black text-party-pink">{data.groupSize}</div>
+              <div className="text-sm text-gray-600">Personas</div>
+            </div>
+            <div className="bg-white p-4 rounded-xl">
+              <div className="text-3xl font-black text-party-orange">{data.dareLevel}/5</div>
+              <div className="text-sm text-gray-600">Nivel LOCURA</div>
+            </div>
+            <div className="bg-white p-4 rounded-xl">
+              <div className="text-3xl font-black text-party-purple">{data.activities.length}</div>
+              <div className="text-sm text-gray-600">Actividades</div>
+            </div>
+            <div className="bg-white p-4 rounded-xl">
+              <div className="text-3xl font-black text-party-blue">100%</div>
+              <div className="text-sm text-gray-600">Probabilidad de liarla</div>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-3">
+          {crazyAnalysis.map((analysis, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ delay: 0.2 + index * 0.1 }}
+              className="bg-gradient-to-r from-purple-50 to-pink-50 p-4 rounded-xl border-l-4 border-party-pink"
+            >
+              <p className="text-gray-800 font-semibold">{analysis}</p>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
-      {/* Análisis con retranca */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2 }}
-        className="card-party"
-      >
-        <div className="flex items-center gap-3 mb-4">
-          <Zap className="text-party-yellow" size={28} />
-          <h2 className="text-2xl font-black text-gray-800">Análisis Express</h2>
-        </div>
-        <div className="space-y-4">
-          <div className="bg-green-50 border-l-4 border-green-500 p-4 rounded-lg">
-            <h3 className="font-bold text-green-800 mb-2">✅ Puntos Fuertes</h3>
-            <ul className="text-gray-700 space-y-1">
-              <li>• Tenéis clarísimo que queréis pasarlo bien (y eso ya es medio camino)</li>
-              <li>• El grupo tiene el tamaño perfecto para no volverse locos organizando</li>
-              <li>• {getLocationName(data.location)} es TOP para despedidas. Sabéis elegir 🎯</li>
-              {data.dareLevel >= 4 && <li>• Con ese nivel de atrevimiento, la diversión está asegurada 🔥</li>}
-            </ul>
+      {/* WARNINGS */}
+      {warnings.length > 0 && (
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.2 }}
+          className="card-party bg-gradient-to-br from-red-50 to-orange-50 border-2 border-red-300"
+        >
+          <div className="flex items-center gap-3 mb-4">
+            <Skull className="text-red-500 animate-pulse" size={32} />
+            <h2 className="text-2xl font-black text-red-700">ALERTAS Y AVISOS</h2>
           </div>
-
-          <div className="bg-orange-50 border-l-4 border-orange-500 p-4 rounded-lg">
-            <h3 className="font-bold text-orange-800 mb-2">⚠️ Áreas de Mejora</h3>
-            <ul className="text-gray-700 space-y-1">
-              <li>• No os olvidéis de reservar CON TIEMPO (sobre todo en temporada alta)</li>
-              <li>• Tened un plan B por si el tiempo no acompaña (esto es Galicia, ya sabes)</li>
-              {!data.accommodation && <li>• Pensad bien el tema alojamiento. Después de la fiesta, agradeceréis tener dónde caer</li>}
-              <li>• Confirmad TODO con la pandilla antes de reservar (que luego siempre hay alguno que se echa atrás)</li>
-            </ul>
+          <div className="space-y-2">
+            {warnings.map((warning, index) => (
+              <div key={index} className="bg-white p-3 rounded-lg border-l-4 border-red-500">
+                <p className="text-gray-800 font-bold">{warning}</p>
+              </div>
+            ))}
           </div>
-        </div>
-      </motion.div>
+        </motion.div>
+      )}
 
-      {/* Plan de Despedida */}
+      {/* IDEAS LOCAS */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -121,62 +286,47 @@ const Report = ({ data, onRestart }) => {
         className="card-party"
       >
         <div className="flex items-center gap-3 mb-4">
-          <Target className="text-party-purple" size={28} />
-          <h2 className="text-2xl font-black text-gray-800">Tu Plan Personalizado</h2>
+          <Flame className="text-party-orange" size={32} />
+          <h2 className="text-3xl font-black text-gray-800">IDEAS DE LOCOS</h2>
         </div>
 
-        <div className="space-y-4">
-          <div className="bg-gradient-to-r from-party-pink/10 to-party-orange/10 p-5 rounded-xl">
-            <h3 className="font-bold text-lg mb-3 text-gray-800">🌅 DÍA 1 - Arranque</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-party-pink font-bold">12:00</span>
-                <span>Llegada a {getLocationName(data.location)} y check-in</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-pink font-bold">14:00</span>
-                <span>Comida de grupo (para coger fuerzas)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-pink font-bold">17:00</span>
-                <span>Primera actividad: {data.activities[0] || 'Sorpresa'}</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-pink font-bold">21:00</span>
-                <span>Cena con mucha retranca</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-pink font-bold">00:00</span>
-                <span>¡A la calle! Marcha nocturna</span>
-              </li>
-            </ul>
-          </div>
+        <p className="text-lg text-gray-600 mb-6 text-center">
+          👇 Aquí van ideas que NADIE más se atreve a sugerir 👇
+        </p>
 
-          <div className="bg-gradient-to-r from-party-blue/10 to-party-purple/10 p-5 rounded-xl">
-            <h3 className="font-bold text-lg mb-3 text-gray-800">☀️ DÍA 2 - A por todas</h3>
-            <ul className="space-y-2 text-gray-700">
-              <li className="flex items-start gap-2">
-                <span className="text-party-blue font-bold">11:00</span>
-                <span>Desayuno recuperatorio (que falta hace)</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-blue font-bold">13:00</span>
-                <span>Actividad estrella del día</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-blue font-bold">20:00</span>
-                <span>Cena de despedida épica</span>
-              </li>
-              <li className="flex items-start gap-2">
-                <span className="text-party-blue font-bold">23:00</span>
-                <span>Final: {data.ending === 'playa' ? '🏖️ A la playa' : data.ending === 'after' ? '🌅 After hasta el amanecer' : '🎉 Sorpresa final'}</span>
-              </li>
-            </ul>
-          </div>
+        <div className="grid md:grid-cols-2 gap-4">
+          {crazyIdeas.map((idea, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4 + index * 0.1 }}
+              className="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-xl border-2 border-yellow-300 hover:scale-105 transition-transform"
+            >
+              <div className="flex items-start gap-3 mb-2">
+                <div className="text-4xl">{idea.emoji}</div>
+                <div className="flex-1">
+                  <h3 className="font-black text-lg text-gray-800 mb-1">{idea.title}</h3>
+                  <p className="text-gray-700 text-sm mb-2">{idea.desc}</p>
+                  <div className="flex gap-1">
+                    {[...Array(5)].map((_, i) => (
+                      <div
+                        key={i}
+                        className={`w-3 h-3 rounded-full ${
+                          i < idea.danger ? 'bg-red-500' : 'bg-gray-300'
+                        }`}
+                      />
+                    ))}
+                    <span className="text-xs text-gray-600 ml-2">Nivel de peligro</span>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </motion.div>
 
-      {/* Recomendaciones finales */}
+      {/* PLAN DE ACCIÓN */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
@@ -184,28 +334,73 @@ const Report = ({ data, onRestart }) => {
         className="card-party"
       >
         <div className="flex items-center gap-3 mb-4">
-          <TrendingUp className="text-party-green" size={28} />
-          <h2 className="text-2xl font-black text-gray-800">Consejos Pro</h2>
+          <Beer className="text-party-yellow" size={32} />
+          <h2 className="text-3xl font-black text-gray-800">Plan de SUPERVIVENCIA</h2>
         </div>
-        <div className="bg-gradient-to-br from-yellow-50 to-orange-50 p-5 rounded-xl border-2 border-yellow-300">
-          <ul className="space-y-3 text-gray-700">
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">💰</span>
-              <span><strong>Presupuesto:</strong> Haced una caja común desde el principio. Evitaréis el "luego te pago" eterno</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">📸</span>
-              <span><strong>Fotos:</strong> Asignad a alguien (sobrio) para grabar los mejores momentos</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">🚗</span>
-              <span><strong>Transporte:</strong> Si vais a beber, organizad transporte. Seguridad ante todo</span>
-            </li>
-            <li className="flex items-start gap-3">
-              <span className="text-2xl">🎁</span>
-              <span><strong>Sorpresas:</strong> Guardad algún as en la manga para flipar al protagonista</span>
-            </li>
-          </ul>
+
+        <div className="space-y-4">
+          <div className="bg-gradient-to-r from-green-50 to-teal-50 p-5 rounded-xl border-2 border-green-300">
+            <h3 className="font-black text-xl mb-3 text-gray-800">📋 ANTES de salir:</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>✅ Caja común de cash (no confiéis en Bizum a las 4 AM)</li>
+              <li>✅ Un sobrio designado (rotad, no seáis animales)</li>
+              <li>✅ Lista de sitios donde PROHIBÍS que vaya el protagonista</li>
+              <li>✅ Grupo de WhatsApp "OFICIAL" (sin el novio/a obvio)</li>
+              <li>✅ Botiquín básico (paracetamol, esparadrapo, dignity)</li>
+            </ul>
+          </div>
+
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-5 rounded-xl border-2 border-blue-300">
+            <h3 className="font-black text-xl mb-3 text-gray-800">🎯 DURANTE la locura:</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>📸 GRABADLO TODO (para reíros después)</li>
+              <li>🚫 No separarse MÁS de 3 grupos (o se pierde gente)</li>
+              <li>💊 Hidratación entre copas (vuestro yo del futuro lo agradecerá)</li>
+              <li>🎭 Si alguien dice "una más y nos vamos" = MENTIRA</li>
+              <li>☎️ Compartid ubicación en tiempo real (por si las moscas)</li>
+            </ul>
+          </div>
+
+          <div className="bg-gradient-to-r from-orange-50 to-red-50 p-5 rounded-xl border-2 border-orange-300">
+            <h3 className="font-black text-xl mb-3 text-gray-800">😅 DESPUÉS del desastre:</h3>
+            <ul className="space-y-2 text-gray-700">
+              <li>🍳 Desayuno XXL (si podéis levantaros de la cama)</li>
+              <li>🤐 Pacto de silencio sobre ciertas cosas (you know)</li>
+              <li>📱 Eliminar ALGUNAS fotos (no todas, que luego las echáis de menos)</li>
+              <li>💰 Ajustar cuentas (siempre falta o sobra pasta, es normal)</li>
+              <li>❤️ Decirle al novio/a que fue la mejor despedida EVER</li>
+            </ul>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* FRASES MÍTICAS que se dirán */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.5 }}
+        className="card-party bg-gradient-to-br from-pink-50 to-purple-50"
+      >
+        <h2 className="text-2xl font-black text-gray-800 mb-4 text-center">
+          💬 Frases que se dirán (100% seguro)
+        </h2>
+        <div className="grid md:grid-cols-2 gap-3">
+          <div className="bg-white p-4 rounded-lg border-l-4 border-party-pink">
+            <p className="font-bold text-gray-800">"Una más y nos vamos"</p>
+            <p className="text-sm text-gray-600">Spoiler: No os fuisteis</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg border-l-4 border-party-purple">
+            <p className="font-bold text-gray-800">"¿Quién tiene el tabaco?"</p>
+            <p className="text-sm text-gray-600">Nadie sabe</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg border-l-4 border-party-orange">
+            <p className="font-bold text-gray-800">"Mañana no bebo más"</p>
+            <p className="text-sm text-gray-600">Mañana: Repeat</p>
+          </div>
+          <div className="bg-white p-4 rounded-lg border-l-4 border-party-blue">
+            <p className="font-bold text-gray-800">"¿Cómo llegué a casa?"</p>
+            <p className="text-sm text-gray-600">Mejor no saberlo</p>
+          </div>
         </div>
       </motion.div>
 
@@ -213,62 +408,69 @@ const Report = ({ data, onRestart }) => {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
+        transition={{ delay: 0.6 }}
         className="card-party"
       >
         <div className="grid md:grid-cols-3 gap-4">
           <button
             onClick={shareWhatsApp}
-            className="btn-primary flex items-center justify-center gap-2"
+            className="btn-primary flex items-center justify-center gap-2 text-lg"
           >
-            <Share2 size={20} />
-            Compartir
+            <Share2 size={24} />
+            ¡Compartir esta locura!
           </button>
 
           <button
             onClick={() => window.open('/recursos', '_blank')}
-            className="btn-secondary flex items-center justify-center gap-2"
+            className="btn-secondary flex items-center justify-center gap-2 text-lg"
           >
-            <Wrench size={20} />
-            Herramientas
+            <Wrench size={24} />
+            Necesito ayuda
           </button>
 
           <button
             onClick={contactAgency}
-            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full font-bold text-white bg-gradient-to-r from-red-500 to-pink-500 shadow-lg transform transition-all duration-200 hover:scale-105"
+            className="flex items-center justify-center gap-2 px-6 py-3 rounded-full font-black text-white bg-gradient-to-r from-red-500 to-pink-500 shadow-lg transform transition-all duration-200 hover:scale-105 text-lg"
           >
-            <AlertCircle size={20} />
-            SOCORRO
+            <AlertCircle size={24} />
+            🆘 SOCORRO
           </button>
         </div>
 
         <div className="mt-6 text-center">
           <button
             onClick={onRestart}
-            className="text-party-purple hover:text-party-pink font-semibold underline"
+            className="text-party-purple hover:text-party-pink font-bold underline text-lg"
           >
-            🔄 Hacer otro test
+            🔄 Hacer otro test (para otra víctima)
           </button>
         </div>
       </motion.div>
 
       {/* CTA Final */}
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ delay: 0.7, type: 'spring' }}
         className="card-party bg-gradient-to-r from-party-pink via-party-purple to-party-blue text-white text-center"
       >
-        <h3 className="text-3xl font-black mb-3">🎉 ¿Listo para la aventura?</h3>
-        <p className="text-lg mb-4">
-          Tenemos contactos TOP en toda Galicia para hacer realidad esta despedida
+        <PartyPopper className="mx-auto mb-4" size={48} />
+        <h3 className="text-4xl font-black mb-4">¿PREPARADO PARA LA LOCURA?</h3>
+        <p className="text-xl mb-6">
+          Tenemos contactos en TODA Galicia para hacer realidad este DESFASE
+        </p>
+        <p className="text-lg mb-6 opacity-90">
+          (Y también para sacarte del calabozo si hace falta)
         </p>
         <button
           onClick={contactAgency}
-          className="bg-white text-party-purple px-8 py-4 rounded-full font-black text-xl hover:scale-105 transition-transform shadow-xl"
+          className="bg-white text-party-purple px-10 py-5 rounded-full font-black text-2xl hover:scale-110 transition-transform shadow-2xl"
         >
-          ¡Quiero que me ayudéis! 🚀
+          ¡QUIERO MONTAR ESTE SHOW! 🎪🔥
         </button>
+        <p className="text-sm mt-4 opacity-75">
+          Respuesta en menos de 24h (o antes si la liáis parda)
+        </p>
       </motion.div>
     </div>
   )

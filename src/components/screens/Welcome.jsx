@@ -13,33 +13,38 @@ const Welcome = ({ onNext }) => {
       </motion.div>
 
       <h1 className="text-5xl font-black mb-4 bg-gradient-to-r from-party-pink via-party-purple to-party-blue bg-clip-text text-transparent">
-        ¡Despedidas Galicia!
+        🍻 ¡A LIARLA PARDA! 🍻
       </h1>
 
-      <p className="text-2xl text-gray-700 mb-8 font-bold">
-        La despedida perfecta te espera 🚀
+      <p className="text-2xl text-gray-700 mb-4 font-black">
+        La despedida más LOCA de Galicia
       </p>
 
-      <div className="flex items-center justify-center gap-3 mb-8">
-        <Sparkles className="text-party-yellow" size={24} />
-        <p className="text-lg text-gray-600">
-          En 2 minutos tendrás tu plan perfecto
+      <p className="text-lg text-gray-600 mb-8">
+        (O de Portugal, que aquí no tenemos fronteras cuando se trata de fiesta)
+      </p>
+
+      <div className="bg-gradient-to-r from-party-pink/20 to-party-orange/20 p-4 rounded-2xl mb-8 border-2 border-party-pink/30">
+        <p className="text-lg font-bold text-gray-800">
+          ⚡ En 2 minutos te montamos un PLAN DE LOCOS ⚡
         </p>
-        <Sparkles className="text-party-yellow" size={24} />
+        <p className="text-sm text-gray-600 mt-2">
+          (Que después dirán: "¿Cómo se nos ocurrió?")
+        </p>
       </div>
 
       <motion.button
         onClick={() => onNext({})}
-        className="btn-primary text-xl px-12 py-4"
+        className="btn-primary text-2xl px-12 py-5 mb-4"
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
       >
-        ¡Vamos allá! 🔥
+        ¡A DARLE CAÑA! 🔥🎉
       </motion.button>
 
-      <div className="mt-8 text-sm text-gray-500">
+      <div className="mt-6 text-sm text-gray-500">
         <PartyPopper className="inline mr-2" size={16} />
-        Sin compromiso • Gratis • Divertido
+        Gratis • Sin compromiso • 100% DESFASE
       </div>
     </div>
   )
