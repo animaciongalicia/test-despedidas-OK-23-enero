@@ -21,7 +21,7 @@ const Solutions = ({ onNext }) => {
     {
       icon: TrendingUp,
       title: 'Optimizado para Galicia',
-      description: 'Los mejores sitios: Coruña, Vigo, Sanxenxo, Oporto...'
+      description: 'Sitios: Coruña, Vigo, Sanxenxo, Oporto...'
     },
     {
       icon: Shield,
