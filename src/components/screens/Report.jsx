@@ -261,7 +261,7 @@ const Report = ({ data, onRestart }) => {
       >
         <h3 className="text-3xl font-black mb-3">🎉 ¿Listo para la aventura?</h3>
         <p className="text-lg mb-4">
-          Tenemos contactos TOP en toda Galicia para hacer realidad esta despedida
+          Tenemos lo mejor de toda Galicia para hacer esta despedida Top
         </p>
         <button
           onClick={contactAgency}
