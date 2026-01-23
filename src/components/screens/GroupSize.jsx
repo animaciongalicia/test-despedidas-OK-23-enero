@@ -34,14 +34,14 @@ const GroupSize = ({ data, onNext }) => {
           Háblanos de la pandilla
         </h2>
         <p className="text-xl text-gray-600">
-          Cuantos más locos, mejor 🎉
+          Cuant@s más loc@s, mejor 🎉
         </p>
       </div>
 
       {/* Tamaño del grupo */}
       <div className="mb-8">
         <label className="block text-lg font-bold text-gray-800 mb-4">
-          ¿Cuántos vais a ser?
+          ¿Cuántos/as vais a ser?
         </label>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {sizeOptions.map((option) => (
