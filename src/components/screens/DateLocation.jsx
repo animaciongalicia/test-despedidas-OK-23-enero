@@ -19,7 +19,6 @@ const DateLocation = ({ data, onNext }) => {
     { value: 'vigo', label: 'Vigo', emoji: '🎪', desc: 'Marcha garantizada' },
     { value: 'sanxenxo', label: 'Sanxenxo', emoji: '🏖️', desc: 'Playa y fiesta' },
     { value: 'oporto', label: 'Oporto', emoji: '🍷', desc: 'Internacional' },
-    { value: 'santiago', label: 'Santiago', emoji: '🎓', desc: 'Ambiente universitario' },
     { value: 'pontevedra', label: 'Pontevedra', emoji: '🎭', desc: 'Casco viejo' },
     { value: 'otros', label: 'Otro sitio', emoji: '🗺️', desc: 'Cuéntanos' }
   ]
