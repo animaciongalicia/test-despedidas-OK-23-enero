@@ -6,16 +6,16 @@ const PainPoints = ({ onNext }) => {
     {
       icon: Clock,
       title: 'Grupos de WhatsApp ETERNOS',
-      description: '200 mensajes sin leer y seguís SIN DECIDIR NADA'
+      description: '60 whats sin leer y seguís sin decidir NADA'
     },
     {
       icon: Users,
       title: 'Nadie se pone de acuerdo',
-      description: 'Uno quiere paintball, otro spa, el otro está en Narnia'
+      description: 'Uno paintball, otra spa, los demás en Narnia'
     },
     {
       icon: DollarSign,
-      title: '"Tío, está MUY caro"',
+      title: '"Joor, está MUY caro"',
       description: 'El pesado de siempre que nunca tiene pasta'
     },
     {
@@ -31,7 +31,7 @@ const PainPoints = ({ onNext }) => {
     {
       icon: Frown,
       title: 'El novio/a decepcionado/a',
-      description: 'Y encima te lo recordarán el resto de tu vida'
+      description: 'Y te lo recordarán el resto de tu vida'
     }
   ]
 
