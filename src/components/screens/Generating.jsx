@@ -54,6 +54,7 @@ const Generating = ({ data, onNext }) => {
     generateReport()
 
     return () => clearInterval(messageInterval)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
