@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 // URL del webhook de MAKE (reemplazar con la URL real)
-const MAKE_WEBHOOK_URL = import.meta.env.VITE_MAKE_WEBHOOK_URL || 'https://hook.eu2.make.com/tu-webhook-aqui'
+const MAKE_WEBHOOK_URL = import.meta.env.VITE_MAKE_WEBHOOK_URL || 'https://hook.eu2.make.com/53iiw7emjpku5kv8qwrgmd7kb4um4eci'
 
 // URL de la API de OpenAI o similar para generar el informe (opcional)
 const AI_API_URL = import.meta.env.VITE_AI_API_URL || ''
