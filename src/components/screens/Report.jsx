@@ -19,7 +19,7 @@ const Report = ({ data, onRestart }) => {
       `WhatsApp: ${data.whatsapp}\n\n` +
       `Las ideas que me disteis son DEMASIADO... ayudadme pls 😅`
     )
-    window.open(`https://wa.me/34612345678?text=${message}`, '_blank')
+    window.open(`https://wa.me/34678288284?text=${message}`, '_blank')
   }
 
   const getLocationName = (location) => {
