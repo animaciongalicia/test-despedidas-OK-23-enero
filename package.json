@@ -10,12 +10,13 @@
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
   },
   "dependencies": {
+    "@vercel/analytics": "^1.6.1",
+    "axios": "^1.6.2",
+    "framer-motion": "^10.16.4",
+    "lucide-react": "^0.294.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "framer-motion": "^10.16.4",
-    "axios": "^1.6.2",
-    "react-hook-form": "^7.48.2",
-    "lucide-react": "^0.294.0"
+    "react-hook-form": "^7.48.2"
   },
   "devDependencies": {
     "@types/react": "^18.2.43",
